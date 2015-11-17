@@ -1,0 +1,14 @@
+Wildcard ssl certificate
+https://www.digicert.com/wildcard-ssl-certificates.htm
+
+Single-Name SSL Certificates
+https://www.digicert.com/welcome/ssl-plus.htm
+
+
+GoDaddy SSL Certificate
+
+
+https://pk.godaddy.com/web-security/ssl-certificate
+
+
+GoDaddy or Enum

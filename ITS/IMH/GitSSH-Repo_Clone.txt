@@ -1,0 +1,52 @@
+# GIT Client Installation 
+sudo apt-get install git
+
+#create .ssh folder 
+mkdir -p ~/.ssh
+
+# Create public / private key
+ssh-keygen -t rsa -C "imobilehealth@techlogix.com"
+
+#Once public / private keys are generated, copy text of public and paste in Gitlab web console
+#cat key.pub
+For Example
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9o/pbqOBuiQpicUqMnk2XMV1BJ7pWm4DXuI+qrqwfH065sdxI9RxTG2vgt6DONXzCCY2MY90rsynBuJukBZt3gQVGREPrPHl2ND/jxUEMouusaxIiKIzgnpjv4z7ZFi+u0oIVC3x/SGxY2jjYrT46Zb59WNjup/8BQhMHO/FnSTjVNSGctAflg0hCb8qLy5vgPdNETv1tBlHuj8ElKxaM4IvGzQmuSXZNdF87VWeTO1XJ/IXyOKdipYy/plqz1fCz/o5EH5y2i/Y/+cHgPYiJiIjz52AzaZ85vnLI/tfKoDiB6uSY60rRsCXL9DxUsSPVwNEko0rZw15Qn7blDE7r imobilehealth@techlogix.com
+
+#Add private in config file
+vi ~/.ssh/config
+
+For Example
+#
+# Main gitlab.com server
+#
+Host gitlab.com
+RSAAuthentication yes
+IdentityFile /home/sysadmin/.ssh/1 #### private key path ###
+User imobilehealth
+
+
+# Clone repository 
+git clone https://gitlab.com/imobilehealth/iMobileHealth.git
+#Provide credentials of gitlab
+For Example
+username: imobilehealth
+password: *******
+
+
+imobilehealth@techlogix.com
+4avOC5Jk
+
+cd ~/git/iMobileHealth/zipy/ws/
+~/activator-dist-1.3.6/activator run
+KLJjkhJKH
+
+
+
+[remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = https://waseemjohn@bitbucket.org/ironhorse-ondemand/cea-admin.git
+
+
+[remote "origin"]
+        url = https://waseemjohn@github.com/XtraIQ/workbench.git
+        fetch = +refs/heads/*:refs/remotes/origin/*

@@ -1,0 +1,404 @@
+java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped [SELECT lookupID as id, value FROM LookupMaster n WHERE n.type=:colName]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1679)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1602)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1608)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:294)
+        at models.LookupMaster.getFromLookup(LookupMaster.java:72)
+        at services.EMR.getRequestedROS(EMR.java:35)
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(Routes.scala:411)
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(Routes.scala:411)
+        at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136)
+        at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127)
+        at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70)
+        at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20)
+        at play.db.jpa.TransactionalAction.lambda$call$5(TransactionalAction.java:19)
+        at play.db.jpa.DefaultJPAApi.withTransaction(DefaultJPAApi.java:136)
+        at play.db.jpa.JPA.withTransaction(JPA.java:159)
+        at play.db.jpa.TransactionalAction.call(TransactionalAction.java:16)
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+        at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+        at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+        at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+        at scala.concurrent.impl.Future$.apply(Future.scala:31)
+        at scala.concurrent.Future$.apply(Future.scala:492)
+        at play.core.j.JavaAction.apply(JavaAction.scala:94)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)
+        at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103)
+        at scala.Option.map(Option.scala:146)
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103)
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96)
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+        at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+        at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped [SELECT lookupID as id, value FROM LookupMaster n WHERE n.type=:colName]
+        at org.hibernate.hql.internal.ast.QuerySyntaxException.generateQueryException(QuerySyntaxException.java:79)
+        at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:218)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+        at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+        at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:298)
+        at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+        at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1825)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+        ... 44 more
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped
+        at org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:171)
+        at org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:91)
+        at org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:76)
+        at org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:321)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3678)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3567)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:708)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:564)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:249)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:262)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:190)
+        ... 52 more
+java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped [SELECT lookupID as id, value FROM LookupMaster n WHERE n.type=:colName]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1679)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1602)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1608)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:294)
+        at models.LookupMaster.getFromLookup(LookupMaster.java:72)
+        at services.EMR.getResquestedSOCH(EMR.java:69)
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$14$$anonfun$apply$14.apply(Routes.scala:423)
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$14$$anonfun$apply$14.apply(Routes.scala:423)
+        at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136)
+        at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127)
+        at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70)
+        at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20)
+        at play.db.jpa.TransactionalAction.lambda$call$5(TransactionalAction.java:19)
+        at play.db.jpa.DefaultJPAApi.withTransaction(DefaultJPAApi.java:136)
+        at play.db.jpa.JPA.withTransaction(JPA.java:159)
+        at play.db.jpa.TransactionalAction.call(TransactionalAction.java:16)
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+        at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+        at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+        at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+        at scala.concurrent.impl.Future$.apply(Future.scala:31)
+        at scala.concurrent.Future$.apply(Future.scala:492)
+        at play.core.j.JavaAction.apply(JavaAction.scala:94)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)
+        at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103)
+        at scala.Option.map(Option.scala:146)
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103)
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96)
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+        at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+        at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped [SELECT lookupID as id, value FROM LookupMaster n WHERE n.type=:colName]
+        at org.hibernate.hql.internal.ast.QuerySyntaxException.generateQueryException(QuerySyntaxException.java:79)
+        at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:218)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+        at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+        at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:298)
+        at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+        at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1825)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+        ... 44 more
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped
+        at org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:171)
+        at org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:91)
+        at org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:76)
+        at org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:321)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3678)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3567)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:708)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:564)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:249)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:262)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:190)
+        ... 52 more
+java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped [SELECT lookupID as id, value FROM LookupMaster n WHERE n.type=:colName]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1679)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1602)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1608)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:294)
+        at models.LookupMaster.getFromLookup(LookupMaster.java:72)
+        at services.EMR.getResquestedPMH(EMR.java:52)
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(Routes.scala:417)
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(Routes.scala:417)
+        at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136)
+        at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127)
+        at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70)
+        at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20)
+        at play.db.jpa.TransactionalAction.lambda$call$5(TransactionalAction.java:19)
+        at play.db.jpa.DefaultJPAApi.withTransaction(DefaultJPAApi.java:136)
+        at play.db.jpa.JPA.withTransaction(JPA.java:159)
+        at play.db.jpa.TransactionalAction.call(TransactionalAction.java:16)
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+        at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+        at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+        at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+        at scala.concurrent.impl.Future$.apply(Future.scala:31)
+        at scala.concurrent.Future$.apply(Future.scala:492)
+        at play.core.j.JavaAction.apply(JavaAction.scala:94)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)
+        at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104)
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103)
+        at scala.Option.map(Option.scala:146)
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103)
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96)
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536)
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+        at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+        at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped [SELECT lookupID as id, value FROM LookupMaster n WHERE n.type=:colName]
+        at org.hibernate.hql.internal.ast.QuerySyntaxException.generateQueryException(QuerySyntaxException.java:79)
+        at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:218)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+        at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+        at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:298)
+        at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+        at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1825)
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+        ... 44 more
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: LookupMaster is not mapped
+        at org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:171)
+        at org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:91)
+        at org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:76)
+        at org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:321)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3678)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3567)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:708)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:564)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301)
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:249)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:262)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:190)
+        ... 52 more
+[error] - play.core.server.netty.PlayDefaultUpstreamHandler - Cannot invoke the action
+java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped [SELECT password FROM PatientMaster n WHERE n.email=:colName]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1679) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1602) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1608) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:294) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at models.Users.verifyUserForLogin(Users.java:135) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at services.UserServices.login(UserServices.java:252) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(Routes.scala:357) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(Routes.scala:357) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.TransactionalAction.lambda$call$5(TransactionalAction.java:19) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.DefaultJPAApi.withTransaction(DefaultJPAApi.java:136) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.JPA.withTransaction(JPA.java:159) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.TransactionalAction.call(TransactionalAction.java:16) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.Future$.apply(Future.scala:492) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at scala.Option.map(Option.scala:146) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [com.typesafe.akka.akka-actor_2.11-2.3.13.jar:na]
+        at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [com.typesafe.akka.akka-actor_2.11-2.3.13.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [org.scala-lang.scala-library-2.11.6.jar:na]
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped [SELECT password FROM PatientMaster n WHERE n.email=:colName]
+        at org.hibernate.hql.internal.ast.QuerySyntaxException.generateQueryException(QuerySyntaxException.java:79) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:218) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:298) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1825) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        ... 44 common frames omitted
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped
+        at org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:171) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:91) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:76) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:321) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3678) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3567) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:708) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:564) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:249) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:262) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:190) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        ... 52 common frames omitted
+[error] - application -
+
+! @6nh3n0p0i - Internal server error, for (POST) [/user/login] ->
+
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped [SELECT password FROM PatientMaster n WHERE n.email=:colName]]
+        at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:261) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:273) [com.typesafe.play.play-netty-server_2.11-2.4.3.jar:2.4.3]
+        at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:269) [com.typesafe.play.play-netty-server_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.Promise$class.complete(Promise.scala:55) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [com.typesafe.akka.akka-actor_2.11-2.3.13.jar:na]
+        at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [com.typesafe.akka.akka-actor_2.11-2.3.13.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [org.scala-lang.scala-library-2.11.6.jar:na]
+Caused by: java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped [SELECT password FROM PatientMaster n WHERE n.email=:colName]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1679) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1602) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1608) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:294) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        at models.Users.verifyUserForLogin(Users.java:135) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at services.UserServices.login(UserServices.java:252) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(Routes.scala:357) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(Routes.scala:357) ~[zipywebservices.zipywebservices-1.0-SNAPSHOT-sans-externalized.jar:na]
+        at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.TransactionalAction.lambda$call$5(TransactionalAction.java:19) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.DefaultJPAApi.withTransaction(DefaultJPAApi.java:136) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.JPA.withTransaction(JPA.java:159) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.db.jpa.TransactionalAction.call(TransactionalAction.java:16) ~[com.typesafe.play.play-java-jpa_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.Future$.apply(Future.scala:492) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at scala.Option.map(Option.scala:146) ~[org.scala-lang.scala-library-2.11.6.jar:na]
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[com.typesafe.play.play_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[com.typesafe.play.play-iteratees_2.11-2.4.3.jar:2.4.3]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [org.scala-lang.scala-library-2.11.6.jar:na]
+        at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [org.scala-lang.scala-library-2.11.6.jar:na]
+        ... 6 common frames omitted
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped [SELECT password FROM PatientMaster n WHERE n.email=:colName]
+        at org.hibernate.hql.internal.ast.QuerySyntaxException.generateQueryException(QuerySyntaxException.java:79) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:218) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:298) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1825) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291) ~[org.hibernate.hibernate-entitymanager-5.0.1.Final.jar:5.0.1.Final]
+        ... 44 common frames omitted
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: PatientMaster is not mapped
+        at org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:171) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:91) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:76) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:321) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3678) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3567) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:708) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:564) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:249) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:262) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:190) ~[org.hibernate.hibernate-core-5.0.1.Final.jar:5.0.1.Final]
+        ... 52 common frames omitted
